@@ -1,6 +1,4 @@
 from django import forms
-from django.db import models
-from django.forms import fields
 
 from .models import Product
 
@@ -12,3 +10,8 @@ class ProductForm(forms.ModelForm):
             'description',
             'price'
         ]
+
+class RawProductForm(forms.Form):
+    title       =forms.CharField()
+    description =forms.CharField()
+    price       =forms.DecimalField()
